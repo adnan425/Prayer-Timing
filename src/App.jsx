@@ -344,15 +344,6 @@ function App() {
               <div className="params-panel">
                 <h2 className="params-title">API Parameters</h2>
 
-                {state.geoUrl ? (
-                  <div className="param-row">
-                    <label className="param-label">
-                      Geocoding URL <span className="param-note">(read-only)</span>
-                    </label>
-                    <input className="param-input mono" readOnly value={state.geoUrl} />
-                  </div>
-                ) : null}
-
                 <div className="param-grid">
                   <div className="param-row">
                     <label className="param-label">Latitude</label>
@@ -467,13 +458,6 @@ function App() {
                       placeholder="0,0,0,0,0,0,0,0,0"
                     />
                   </div>
-                </div>
-
-                <div className="param-row">
-                  <label className="param-label">
-                    Built URL <span className="param-note">(read-only)</span>
-                  </label>
-                  <input className="param-input mono" readOnly value={builtUrl} />
                 </div>
 
                 <button
