@@ -1,0 +1,272 @@
+.app {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: min(100%, 980px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  background: color-mix(in oklab, var(--bg) 92%, black 8%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.left-col {
+  display: grid;
+  gap: 12px;
+}
+
+.right-col {
+  position: sticky;
+  top: 24px;
+  border-left: 1px solid var(--border);
+  padding-left: 32px;
+}
+
+@media (max-width: 680px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .right-col {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 20px;
+    position: static;
+  }
+}
+
+.sub {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.primary {
+  border: 1px solid var(--accent-border);
+  color: var(--text-h);
+  background: var(--accent-bg);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e5484d;
+  margin-top: 12px;
+}
+
+.hint {
+  margin-top: 16px;
+}
+
+.meta {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.timings {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.timings li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 15px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--bg) 80%, black 20%);
+  color: var(--text);
+  min-width: 0;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.search-btn {
+  flex-shrink: 0;
+  border: 1px solid var(--accent-border);
+  color: var(--text-h);
+  background: var(--accent-bg);
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.search-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.suggestion-item {
+  padding: 10px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: color-mix(in oklab, var(--bg) 80%, black 20%);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  opacity: 0.4;
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.params-panel {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.params-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin: 0 0 4px;
+}
+
+.param-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.param-row {
+  display: grid;
+  gap: 4px;
+}
+
+.param-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.param-note {
+  font-weight: 400;
+  opacity: 0.55;
+}
+
+.param-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--bg) 80%, black 20%);
+  color: var(--text);
+}
+
+.param-input.mono {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.param-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.param-input[readonly] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+select.param-input {
+  cursor: pointer;
+}
+
+.secondary {
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.secondary:hover {
+  background: color-mix(in oklab, var(--bg) 80%, black 20%);
+}
+
+.secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
