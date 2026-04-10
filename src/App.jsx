@@ -13,7 +13,7 @@ const COUNTRY_METHOD = {
   EG: 5,  LY: 5,  SD: 5,  SY: 5,
   IQ: 5,  LB: 5,  PS: 5,           // Egyptian General Authority
   IR: 7,                           // Univ. of Tehran
-  AE: 8,  BH: 8,  OM: 8,           // Gulf Region
+  AE: 4,  BH: 4,  OM: 4,           // Umm al-Qura, Makkah (Gulf)
   KW: 9,                           // Kuwait
   QA: 10,                          // Qatar
   SG: 11,                          // MUIS Singapore
@@ -465,7 +465,7 @@ function App() {
                   onClick={() => fetchAndApply(builtUrl)}
                   disabled={state.loading || !builtUrl}
                 >
-                  Re-fetch with these params
+                  Update
                 </button>
               </div>
             ) : null}
